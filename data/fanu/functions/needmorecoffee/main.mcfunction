@@ -22,10 +22,10 @@ execute as @e[tag=runeParticles3] at @s run particle witch ~ ~ ~ 0 0 0 3 1 norma
 
 # Choose player
 execute if entity @p[scores={runeCooldown=0}] as @e[nbt={Item:{tag:{markedRune:1b}},Age:150s}] at @s run tag @p[scores={runeCooldown=0}] add runeTarget
-scoreboard players set @p[tag=runeTarget,scores={runeCooldown=0}] runeCooldown 6000
+scoreboard players set @p[tag=runeTarget,scores={runeCooldown=0}] runeCooldown 600
 
 # Prime rune
-execute if entity @p[tag=runeTarget,scores={runeCooldown=6000}] as @e[nbt={Item:{tag:{markedRune:1b}},Age:150s}] run tag @s add activeRune
+execute if entity @p[tag=runeTarget,scores={runeCooldown=600}] as @e[nbt={Item:{tag:{markedRune:1b}},Age:150s}] run tag @s add activeRune
 
 # Store rune coordinates to player's scoreboard
 execute as @e[tag=activeRune] store result score @p[tag=runeTarget] runeX run data get entity @s Item.tag.LodestonePos.X 1
@@ -36,8 +36,6 @@ execute at @p[tag=runeTarget] run particle cloud ~ ~ ~ 0 0 0 0.4 1000 normal
 
 # Summon an armorstand to destination
 execute if entity @e[tag=activeRune,nbt={Item:{tag:{LodestoneDimension:"minecraft:overworld"}}}] run execute in minecraft:overworld run function fanu:needmorecoffee/teleport_overworld
-execute if entity @e[tag=activeRune,nbt={Item:{tag:{LodestoneDimension:"minecraft:the_nether"}}}] run execute in minecraft:the_nether run function fanu:needmorecoffee/teleport_the_nether
-execute if entity @e[tag=activeRune,nbt={Item:{tag:{LodestoneDimension:"minecraft:the_end"}}}] run execute in minecraft:the_end run summon minecraft:armor_stand ~ ~ ~ {Tags:["runeDestination"],Invisible:1b,Marker:1b}
 #execute as @e[tag=runeDestination,limit=1] run function fanu:needmorecoffee/teleportstand
 
 #execute as @p[tag=runeTarget] if score @s runeD matches 0 in minecraft:overworld run tp @s ~0.5 ~ ~0.5

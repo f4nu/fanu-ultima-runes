@@ -13,10 +13,12 @@ data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Ite
 execute if entity @p[nbt={Dimension:"minecraft:overworld"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.runeDimension set value 0s
 execute if entity @p[nbt={Dimension:"minecraft:the_nether"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.runeDimension set value -1s
 execute if entity @p[nbt={Dimension:"minecraft:the_end"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.runeDimension set value 1s
+execute if entity @p[nbt={Dimension:"fanu:old_world"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.runeDimension set value 2s
 
 execute if entity @p[nbt={Dimension:"minecraft:overworld"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.LodestoneDimension set value "minecraft:overworld"
 execute if entity @p[nbt={Dimension:"minecraft:the_nether"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.LodestoneDimension set value "minecraft:the_nether"
 execute if entity @p[nbt={Dimension:"minecraft:the_end"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.LodestoneDimension set value "minecraft:the_end"
+execute if entity @p[nbt={Dimension:"fanu:old_world"},distance=..15,limit=1] run data modify entity @e[nbt={Item:{tag:{markedRune:1b}}},distance=..1,limit=1] Item.tag.LodestoneDimension set value "fanu:old_world"
 
 kill @s
 
