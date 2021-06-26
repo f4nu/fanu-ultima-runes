@@ -26,26 +26,16 @@ scoreboard players set @p[tag=runeTarget,scores={runeCooldown=0}] runeCooldown 6
 
 # Prime rune
 execute if entity @p[tag=runeTarget,scores={runeCooldown=600}] as @e[nbt={Item:{tag:{markedRune:1b}},Age:150s}] run tag @s add activeRune
+#execute if entity @p[tag=runeTarget,scores={runeCooldown=600}] run data get entity @e[nbt={Item:{tag:{markedRune:1b}},Age:150s},limit=1]
 
-# Store rune coordinates to player's scoreboard
-execute as @e[tag=activeRune] store result score @p[tag=runeTarget] runeX run data get entity @s Item.tag.LodestonePos.X 1
-execute as @e[tag=activeRune] store result score @p[tag=runeTarget] runeZ run data get entity @s Item.tag.LodestonePos.Z 1
-execute as @e[tag=activeRune] store result score @p[tag=runeTarget] runeY run data get entity @s Item.tag.LodestonePos.Y 1
+# Set variables to initiate procedure
+execute if entity @e[tag=activeRune,nbt={Item:{tag:{LodestoneDimension:"minecraft:overworld"}}}] as @p[tag=runeTarget,scores={runeCooldown=600},limit=1] at @p[tag=runeTarget,scores={runeCooldown=600},limit=1] run execute in minecraft:overworld run function fanu:needmorecoffee/teleport_overworld
 
-execute at @p[tag=runeTarget] run particle cloud ~ ~ ~ 0 0 0 0.4 1000 normal
-
-# Summon an armorstand to destination
-execute if entity @e[tag=activeRune,nbt={Item:{tag:{LodestoneDimension:"minecraft:overworld"}}}] run execute in minecraft:overworld run function fanu:needmorecoffee/teleport_overworld
-#execute as @e[tag=runeDestination,limit=1] run function fanu:needmorecoffee/teleportstand
-
-#execute as @p[tag=runeTarget] if score @s runeD matches 0 in minecraft:overworld run tp @s ~0.5 ~ ~0.5
-#execute as @p[tag=runeTarget] if score @s runeD matches 1 in minecraft:the_end run tp @s ~0.5 ~ ~0.5
-#execute as @p[tag=runeTarget] if score @s runeD matches -1 in minecraft:the_nether run tp @s ~0.5 ~ ~0.5
-
+# Clear rune-recognition player status
 tag @p[tag=runeTarget] remove runeTarget
 
-#execute as @e[nbt={Item:{tag:{markedRune:1b}}}] if data entity @s {Item:{tag:{LodestoneDimension:"minecraft:overworld"}}} in minecraft:overworld as @p run function fanu:needmorecoffee/tpEntity
-#execute as @e[nbt={Item:{tag:{markedRune:1b}}}] at @s run kill @s
+# If there's a tag=movingTarget, move it
+#execute as @e[tag=movingTarget] at @e[tag=movingTarget] run function fanu:needmorecoffee/move_player/move_player
 
 # Mark rune (compass + netherite ingot)
 # /summon item ~ ~ ~ {Item:{id:"minecraft:compass",Count:1b,tag:{display:{Name:'{"text":"Rune of Teleportation","color":"gold"}'},HideFlags:4,Unbreakable:1b,CustomModelData:123456,runeofteleportation:1b,LodestoneDimension:"minecraft:overworld",LodestoneTracked:0b,LodestonePos:{X:7,Y:7,Z:7}}}}

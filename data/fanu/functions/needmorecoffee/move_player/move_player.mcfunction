@@ -1,0 +1,10 @@
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
+function fanu:needmorecoffee/move_player/move_player_once
