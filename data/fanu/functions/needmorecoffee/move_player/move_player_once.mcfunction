@@ -1,4 +1,0 @@
-function fanu:needmorecoffee/move_player/move_player_1k
-#function fanu:needmorecoffee/move_player/move_player_1h
-#function fanu:needmorecoffee/move_player/move_player_1d
-#function fanu:needmorecoffee/move_player/move_player_1

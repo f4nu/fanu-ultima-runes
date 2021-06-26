@@ -35,7 +35,7 @@ execute if entity @e[tag=activeRune,nbt={Item:{tag:{LodestoneDimension:"minecraf
 tag @p[tag=runeTarget] remove runeTarget
 
 # If there's a tag=movingTarget, move it
-#execute as @e[tag=movingTarget] at @e[tag=movingTarget] run function fanu:needmorecoffee/move_player/move_player
+execute as @e[tag=runeDestination] at @e[tag=runeDestination] run function fanu:needmorecoffee/move_player/move_player
 
 # Mark rune (compass + netherite ingot)
 # /summon item ~ ~ ~ {Item:{id:"minecraft:compass",Count:1b,tag:{display:{Name:'{"text":"Rune of Teleportation","color":"gold"}'},HideFlags:4,Unbreakable:1b,CustomModelData:123456,runeofteleportation:1b,LodestoneDimension:"minecraft:overworld",LodestoneTracked:0b,LodestonePos:{X:7,Y:7,Z:7}}}}

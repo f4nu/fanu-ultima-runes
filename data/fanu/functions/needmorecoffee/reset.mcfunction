@@ -35,6 +35,11 @@ scoreboard players set @a minusOneD -10
 scoreboard players set @a minusOneH -100
 scoreboard players set @a minusOneK -1000
 
+scoreboard objectives add scanXFrom dummy "Scan X From"
+scoreboard objectives add scanZFrom dummy "Scan Z From"
+scoreboard objectives add scanXTo dummy "Scan X To"
+scoreboard objectives add scanZTo dummy "Scan Z To"
+
 scoreboard objectives add runeX dummy "Rune target X"
 scoreboard objectives add runeY dummy "Rune target Y"
 scoreboard objectives add runeZ dummy "Rune target Z"
