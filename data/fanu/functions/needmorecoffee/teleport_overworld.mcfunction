@@ -18,7 +18,7 @@ execute as @e[tag=activeRune] store result score @e[tag=runeDestination] runeX r
 execute as @e[tag=activeRune] store result score @e[tag=runeDestination] runeZ run data get entity @s Item.tag.LodestonePos.Z 1
 execute as @e[tag=activeRune] store result score @e[tag=runeDestination] runeY run data get entity @s Item.tag.LodestonePos.Y 1
 
-execute as @e[tag=runeDestination] run function fanu:needmorecoffee/generated/0__17000__17000_17000_17000.mcfunction
+execute as @e[tag=runeDestination] run function fanu:needmorecoffee/generated/0__16000__16000_16000_16000
 
 #execute store result entity @e[tag=runeDestination,limit=1] Pos[0] double 1 run scoreboard players get @p[tag=runeTarget] runeX
 #execute store result entity @e[tag=runeDestination,limit=1] Pos[1] double 1 run scoreboard players get @p[tag=runeTarget] runeY
